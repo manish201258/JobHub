@@ -1,0 +1,237 @@
+/* JobCard.css */
+:root {
+    --neon-primary: #39ff14;
+    --neon-secondary: #2de00f;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --light-text: #ffffff;
+    --muted-text: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(15, 15, 15, 0.8);
+    --border-color: rgba(57, 255, 20, 0.2);
+}
+
+.job-card-container {
+    position: relative;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    /* border: 1px solid var(--border-color); */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: var(--light-text);
+}
+
+.job-card-container:hover {
+    border-color: var(--neon-primary);
+}
+
+.job-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+                rgba(57, 255, 20, 0.1) 0%, 
+                transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.job-card-container:hover .job-card-glow {
+    opacity: 1;
+}
+
+.job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.job-posted-time {
+    font-size: 0.8rem;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-bookmark-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.job-bookmark-btn:hover {
+    background: rgba(57, 255, 20, 0.2);
+    border-color: var(--neon-primary);
+}
+
+.bookmark-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--neon-primary);
+}
+
+.job-company-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.company-logo-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transform-style: preserve-3d;
+}
+
+.company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.company-location {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    margin: 0;
+}
+
+.job-details {
+    margin-bottom: 1.5rem;
+}
+
+.job-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.job-description {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.job-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+}
+
+.positions-tag {
+    background: rgba(0, 123, 255, 0.2);
+    color: #007bff;
+}
+
+.type-tag {
+    background: rgba(248, 48, 2, 0.2);
+    color: #F83002;
+}
+
+.salary-tag {
+    background: rgba(114, 9, 183, 0.2);
+    color: #7209b7;
+}
+
+.job-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.details-btn, .save-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.details-btn {
+    background: transparent;
+    border: 1px solid var(--neon-primary);
+    color: var(--neon-primary);
+}
+
+.details-btn:hover {
+    background: rgba(57, 255, 20, 0.1);
+}
+
+.save-btn {
+    background: var(--neon-primary);
+    color: var(--dark-bg);
+    border: none;
+}
+
+.save-btn:hover {
+    box-shadow: 0 0 15px var(--neon-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .job-card-container {
+        padding: 1.25rem;
+    }
+
+    .job-title {
+        font-size: 1.1rem;
+    }
+
+    .job-description {
+        font-size: 0.8rem;
+    }
+
+    .job-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .details-btn, .save-btn {
+        width: 100%;
+    }
+}

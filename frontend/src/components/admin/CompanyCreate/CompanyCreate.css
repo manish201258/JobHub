@@ -1,0 +1,153 @@
+/* Base Styles */
+.company-create-container {
+    background-color: #121212;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.company-create-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+/* Card Styles */
+.company-create-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+}
+
+/* Header Styles */
+.company-create-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.company-create-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #ffffff, #cccccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.company-create-subtitle {
+    color: #aaaaaa;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+.company-create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.company-create-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #00ff00;
+    margin-bottom: 0.5rem;
+}
+
+.company-create-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.company-create-input:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+/* Action Buttons */
+.company-create-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.company-create-cancel-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.company-create-submit-btn {
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .company-create-content {
+        padding: 1.5rem;
+    }
+    
+    .company-create-card {
+        padding: 1.5rem;
+    }
+    
+    .company-create-title {
+        font-size: 1.5rem;
+    }
+    
+    .company-create-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .company-create-content {
+        padding: 1rem;
+    }
+    
+    .company-create-card {
+        padding: 1rem;
+    }
+    
+    .company-create-title {
+        font-size: 1.3rem;
+    }
+    
+    .company-create-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .company-create-input {
+        padding: 0.7rem;
+    }
+    
+    .company-create-cancel-btn,
+    .company-create-submit-btn {
+        padding: 0.7rem;
+    }
+}

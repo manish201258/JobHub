@@ -1,0 +1,169 @@
+/* AppliedJobsTable.css */
+:root {
+    --neon-primary: #39ff14;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --light-text: #ffffff;
+    --muted-text: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(15, 15, 15, 0.8);
+    --border-color: rgba(57, 255, 20, 0.2);
+    --table-header-bg: rgba(57, 255, 20, 0.1);
+}
+
+.applied-jobs-container {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.jobs-table-wrapper {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.table-caption {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--neon-primary);
+    padding: 1.5rem 1.5rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    background: var(--table-header-bg);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-cell {
+    font-weight: 600;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-cell {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted-text);
+    font-style: italic;
+}
+
+/* Glow effect */
+.jobs-table-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+                rgba(57, 255, 20, 0.1) 0%, 
+                transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.jobs-table-wrapper:hover::after {
+    opacity: 0.3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "date status"
+            "role company";
+        gap: 0.5rem;
+    }
+
+    .header-cell:nth-child(1),
+    .table-cell:nth-child(1) {
+        grid-area: date;
+    }
+
+    .header-cell:nth-child(2),
+    .table-cell:nth-child(2) {
+        grid-area: role;
+    }
+
+    .header-cell:nth-child(3),
+    .table-cell:nth-child(3) {
+        grid-area: company;
+    }
+
+    .header-cell:nth-child(4),
+    .table-cell:nth-child(4) {
+        grid-area: status;
+    }
+
+    .table-caption {
+        padding: 1rem 1rem 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .table-header,
+    .table-row {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-cell {
+        font-size: 0.8rem;
+    }
+
+    .status-badge {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+    }
+}

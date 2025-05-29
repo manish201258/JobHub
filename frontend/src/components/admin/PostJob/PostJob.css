@@ -1,0 +1,207 @@
+/* Base Styles */
+.post-job-container {
+    background-color: #121212;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.post-job-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+/* Card Styles */
+.post-job-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+}
+
+/* Title Styles */
+.post-job-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #ffffff, #cccccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+/* Form Grid */
+.post-job-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.post-job-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.post-job-company-select {
+    grid-column: span 2;
+}
+
+/* Label Styles */
+.post-job-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #00ff00;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post-job-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Input Styles */
+.post-job-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.post-job-input:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+/* Select Styles */
+.post-job-select-trigger {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.post-job-select-content {
+    background: #1e1e1e;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.post-job-select-item {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.post-job-select-item:hover {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+}
+
+/* Submit Button */
+.post-job-submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.post-job-submit-btn {
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.post-job-submit-btn:disabled {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+}
+
+.post-job-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.post-job-error-message {
+    color: #ff5555;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .post-job-content {
+        padding: 1.5rem;
+    }
+    
+    .post-job-card {
+        padding: 1.5rem;
+    }
+    
+    .post-job-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-job-company-select {
+        grid-column: span 1;
+    }
+    
+    .post-job-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .post-job-content {
+        padding: 1rem;
+    }
+    
+    .post-job-card {
+        padding: 1rem;
+    }
+    
+    .post-job-title {
+        font-size: 1.3rem;
+    }
+    
+    .post-job-input {
+        padding: 0.7rem;
+    }
+    
+    .post-job-submit-btn {
+        padding: 0.8rem;
+    }
+}

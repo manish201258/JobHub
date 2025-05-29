@@ -1,0 +1,386 @@
+/* AuthLogin.css */
+:root {
+    --neon-primary: #39ff14;
+    --neon-secondary: #2de00f;
+    --dark-bg: #0a0a0a;
+    --dark-surface: #121212;
+    --light-text: #ffffff;
+    --muted-text: rgba(255, 255, 255, 0.7);
+}
+
+.auth-login-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(57, 255, 20, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(57, 255, 20, 0.1) 0%, transparent 30%),
+        url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-8392.jpg?ga=GA1.1.2093813867.1733464151&semt=ais_hybrid');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.auth-login-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(57, 255, 20, 0.15),
+        0 0 30px rgba(57, 255, 20, 0.1);
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.auth-login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
+    box-shadow: 0 0 15px var(--neon-primary);
+}
+
+.auth-login-header {
+    position: relative;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.auth-login-title {
+    color: var(--light-text);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.auth-login-close {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--light-text);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.auth-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.auth-input-group {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.auth-input-field {
+    width: 100%;
+    padding: 1.2rem 1rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--light-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.auth-input-field:focus {
+    outline: none;
+    border-color: var(--neon-primary);
+    box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.2);
+}
+
+.auth-input-field::placeholder {
+    color: transparent;
+}
+
+.auth-input-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--muted-text);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.auth-input-field:focus + .auth-input-label,
+.auth-input-field:not(:placeholder-shown) + .auth-input-label {
+    transform: translateY(-1.2rem) scale(0.8);
+    transform-origin: left top;
+    color: var(--neon-primary);
+}
+
+.auth-input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-primary);
+    transition: width 0.4s ease;
+    box-shadow: 0 0 10px var(--neon-primary);
+}
+
+.auth-input-field:focus ~ .auth-input-highlight {
+    width: 100%;
+}
+
+.auth-role-selector {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.option-login{
+    background:#121212;
+    color: white;
+}
+
+
+.auth-role-label {
+    position: absolute;
+    top: -0.8rem;
+    left: 0.8rem;
+    background: var(--dark-bg);
+    padding: 0 0.5rem;
+    color: var(--neon-primary);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.auth-role-select {
+    width: 100%;
+    padding: 1.2rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--light-text);
+    font-size: 1rem;
+    appearance: none;
+    transition: all 0.3s ease;
+}
+
+.auth-role-select:focus {
+    outline: none;
+    border-color: var(--neon-primary);
+    box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.2);
+}
+
+.auth-options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}
+
+.auth-remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.auth-remember-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.auth-remember-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.auth-remember-me:hover .auth-remember-custom {
+    border-color: var(--neon-primary);
+}
+
+.auth-remember-checkbox:checked ~ .auth-remember-custom {
+    background-color: var(--neon-primary);
+    border-color: var(--neon-primary);
+}
+
+.auth-remember-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0.4rem;
+    top: 0.1rem;
+    width: 0.3rem;
+    height: 0.7rem;
+    border: solid var(--dark-bg);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.auth-remember-checkbox:checked ~ .auth-remember-custom:after {
+    display: block;
+}
+
+.auth-forgot-password {
+    color: var(--neon-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.auth-forgot-password:hover {
+    text-shadow: 0 0 5px var(--neon-primary);
+}
+
+.auth-submit-button {
+    position: relative;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.auth-submit-button:hover {
+    box-shadow: 0 0 15px var(--neon-primary);
+}
+
+.auth-submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.auth-signup-prompt {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--muted-text);
+    font-size: 0.95rem;
+}
+
+.auth-signup-link {
+    color: var(--neon-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.auth-signup-link:hover {
+    text-shadow: 0 0 5px var(--neon-primary);
+}
+
+/* Tech decoration elements */
+.auth-tech-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.auth-circuit-line {
+    position: absolute;
+    width: 150%;
+    height: 1px;
+    background: rgba(57, 255, 20, 0.1);
+    top: 30%;
+    left: -25%;
+    transform: rotate(-5deg);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.auth-grid-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+.auth-neon-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+    top: -50px;
+    right: -50px;
+    filter: blur(20px);
+}
+
+@media (max-width: 480px) {
+    .auth-login-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .auth-login-title {
+        font-size: 1.8rem;
+    }
+    
+    .auth-input-field {
+        font-size: 0.95rem;
+    }
+}

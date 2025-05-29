@@ -1,0 +1,246 @@
+/* Base Styles */
+.company-setup-container {
+    background-color: #121212;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.company-setup-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+/* Card Styles */
+.company-setup-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+}
+
+/* Header Styles */
+.company-setup-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.company-setup-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.company-setup-back-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.company-setup-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(to right, #ffffff, #cccccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Form Grid */
+.company-setup-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.company-setup-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.company-setup-logo-group {
+    grid-column: span 2;
+}
+
+.company-setup-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #00ff00;
+}
+
+.company-setup-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.company-setup-input:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+/* Logo Upload */
+.company-setup-logo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 2px dashed rgba(0, 255, 0, 0.3);
+    border-radius: 12px;
+    background: rgba(0, 255, 0, 0.05);
+    position: relative;
+}
+
+.company-setup-logo-preview {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.company-setup-upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.company-setup-upload-btn:hover {
+    background: rgba(0, 255, 0, 0.2);
+}
+
+.company-setup-upload-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.company-setup-file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Submit Button */
+.company-setup-submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.company-setup-submit-btn {
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.company-setup-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.company-setup-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .company-setup-content {
+        padding: 1.5rem;
+    }
+    
+    .company-setup-card {
+        padding: 1.5rem;
+    }
+    
+    .company-setup-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-setup-logo-group {
+        grid-column: span 1;
+    }
+    
+    .company-setup-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .company-setup-content {
+        padding: 1rem;
+    }
+    
+    .company-setup-card {
+        padding: 1rem;
+    }
+    
+    .company-setup-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .company-setup-title {
+        font-size: 1.3rem;
+    }
+    
+    .company-setup-input {
+        padding: 0.7rem;
+    }
+    
+    .company-setup-submit-btn {
+        padding: 0.8rem;
+    }
+}

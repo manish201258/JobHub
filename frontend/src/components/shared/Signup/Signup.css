@@ -1,0 +1,334 @@
+/* TechSignup.css */
+:root {
+    --neon-green: #39ff14;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --light-text: #ffffff;
+    --muted-text: rgba(255, 255, 255, 0.7);
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.1);
+}
+
+.tech-signup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+    radial-gradient(circle at 20% 30%, rgba(57, 255, 20, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(57, 255, 20, 0.1) 0%, transparent 30%),
+        url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-8392.jpg?ga=GA1.1.2093813867.1733464151&semt=ais_hybrid') center/cover no-repeat;
+    background-blend-mode: overlay;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.tech-signup-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(57, 255, 20, 0.1),
+        0 0 20px rgba(57, 255, 20, 0.1);
+    border: 1px solid rgba(57, 255, 20, 0.1);
+    overflow: hidden;
+}
+
+.tech-signup-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.tech-signup-header {
+    position: relative;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tech-signup-title {
+    color: var(--light-text);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.tech-signup-close {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--input-border);
+    border-radius: 50%;
+    color: var(--light-text);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tech-signup-close:hover {
+    background: rgba(57, 255, 20, 0.2);
+    color: var(--neon-green);
+}
+
+.tech-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.tech-input-group {
+    position: relative;
+    margin-top: 0rem;
+}
+
+.tech-input-field {
+    width: 100%;
+    padding: 1rem 1rem 0.5rem;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--light-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tech-input-field:focus {
+    outline: none;
+    border-color: var(--neon-green);
+    box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.2);
+}
+
+.tech-input-field::placeholder {
+    color: transparent;
+}
+
+.tech-input-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--muted-text);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.tech-input-field:focus + .tech-input-label,
+.tech-input-field:not(:placeholder-shown) + .tech-input-label {
+    transform: translateY(-1.2rem) scale(0.8);
+    transform-origin: left top;
+    color: var(--neon-green);
+}
+
+.tech-input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-green);
+    transition: width 0.4s ease;
+}
+
+.tech-input-field:focus ~ .tech-input-highlight {
+    width: 100%;
+}
+
+.tech-role-selector {
+    margin-top: 0.5rem;
+}
+
+.tech-role-options {
+    display: flex;
+    background: var(--darker-bg);
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid var(--input-border);
+}
+
+.tech-role-option {
+    flex: 1;
+    padding: 0.8rem;
+    background: transparent;
+    border: none;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.tech-role-option.active {
+    background: rgba(57, 255, 20, 0.1);
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.tech-role-option:not(.active):hover {
+    color: var(--light-text);
+}
+
+.tech-file-upload {
+    margin-top: 0rem;
+}
+
+.tech-file-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+.tech-file-input-wrapper {
+    position: relative;
+}
+
+.tech-file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tech-file-display {
+    padding: 0.8rem 1rem;
+    background: var(--input-bg);
+    border: 1px dashed var(--input-border);
+    border-radius: 8px;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tech-file-input:hover + .tech-file-display,
+.tech-file-input:focus + .tech-file-display {
+    border-color: var(--neon-green);
+    color: var(--light-text);
+}
+
+.tech-submit-button {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tech-submit-button:hover {
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.tech-submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.tech-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.tech-login-prompt {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--muted-text);
+    font-size: 0.95rem;
+}
+
+.tech-login-link {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.tech-login-link:hover {
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+/* Decoration elements */
+.tech-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.tech-grid-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+.tech-neon-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+    bottom: -50px;
+    right: -50px;
+    filter: blur(30px);
+}
+
+@media (max-width: 480px) {
+    .tech-signup-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .tech-signup-title {
+        font-size: 1.8rem;
+    }
+    
+    .tech-input-field {
+        font-size: 0.95rem;
+    }
+}

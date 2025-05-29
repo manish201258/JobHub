@@ -1,0 +1,136 @@
+/* Base Styles */
+.applicants-container {
+    background-color: #121212;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.applicants-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+/* Card Styles */
+.applicants-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+}
+
+/* Header Styles */
+.applicants-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.applicants-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.applicants-title-icon {
+    font-size: 2rem;
+    color: #00ff00;
+}
+
+.applicants-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(to right, #ffffff, #cccccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.applicants-count {
+    background-color: #00ff00;
+   
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.application-counter{
+    color: #121212;
+}
+
+.applicants-subtitle {
+    color: #aaaaaa;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Table Container */
+.applicants-table-container {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 0, 0.1);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(2deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .applicants-content {
+        padding: 1.5rem;
+    }
+    
+    .applicants-title {
+        font-size: 1.5rem;
+    }
+    
+    .applicants-table-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .applicants-content {
+        padding: 1rem;
+    }
+    
+    .applicants-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .applicants-title-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .applicants-table-container {
+        transform: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .applicants-title {
+        font-size: 1.2rem;
+    }
+    
+    .applicants-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .applicants-table-container {
+        padding: 0.5rem;
+    }
+}

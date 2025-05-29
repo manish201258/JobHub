@@ -1,0 +1,7 @@
+.status >span{
+    color:  rgb(67, 244, 9);
+}
+
+.status>span:hover{
+  color: greenyellow;
+}

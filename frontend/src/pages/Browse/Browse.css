@@ -1,0 +1,125 @@
+/* Browse.css */
+:root {
+    --neon-primary: #39ff14;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --light-text: #ffffff;
+    --muted-text: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(15, 15, 15, 0.8);
+    --border-color: rgba(57, 255, 20, 0.2);
+}
+
+.browse-page-container {
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.browse-content-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.browse-header {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.browse-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.job-count-badge {
+    background: var(--neon-primary);
+    color: var(--dark-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.jobs-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem 0;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+    color: var(--muted-text);
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+/* Decorative elements */
+.browse-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: var(--neon-primary);
+    box-shadow: 0 0 10px var(--neon-primary);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .jobs-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .browse-content-wrapper {
+        padding: 1rem;
+    }
+
+    .browse-title {
+        font-size: 1.5rem;
+    }
+
+    .jobs-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.job-card-wrapper {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #0c3405 !important;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-card-wrapper:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(75, 240, 46, 0.929) !important;
+}

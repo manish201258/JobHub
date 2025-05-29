@@ -1,0 +1,206 @@
+/* Base Styles */
+.companies-table-container {
+    width: 100%;
+    padding: 1rem;
+    perspective: 1000px;
+}
+
+.companies-table-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.companies-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+}
+
+.companies-table-caption {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+/* Header Styles */
+.companies-table-header {
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 8px;
+}
+
+.companies-table-header-row {
+    border-radius: 8px;
+}
+
+.companies-table-header-cell {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #00ff00;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.companies-table-action-cell {
+    text-align: right;
+}
+
+/* Body Styles */
+.companies-table-body {
+    margin-top: 1rem;
+}
+
+.companies-table-row {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 0.8rem;
+}
+
+.companies-table-cell {
+    padding: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.companies-table-logo-cell {
+    width: 80px;
+}
+
+.companies-table-name-cell {
+    font-weight: 500;
+}
+
+.companies-table-date-cell {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+.companies-table-avatar {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Action Styles */
+.companies-table-action-trigger {
+    display: inline-flex;
+    color: #aaaaaa;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.companies-table-popover-content {
+    background: #1e1e1e;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.companies-table-edit-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.companies-table-edit-icon {
+    width: 16px;
+    height: 16px;
+    color: #00ff00;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .companies-table-card {
+        padding: 1rem;
+    }
+    
+    .companies-table-header-cell {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .companies-table-cell {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .companies-table-logo-cell {
+        width: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .companies-table-container {
+        padding: 0.5rem;
+    }
+    
+    .companies-table-caption {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .companies-table-header {
+        display: none;
+    }
+    
+    .companies-table-row {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(0, 255, 0, 0.1);
+    }
+    
+    .companies-table-cell {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: none;
+    }
+    
+    .companies-table-cell::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #00ff00;
+        margin-right: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .companies-table-logo-cell {
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 0.5rem;
+    }
+    
+    .companies-table-logo-cell::before {
+        display: none;
+    }
+    
+    .companies-table-action-cell {
+        justify-content: flex-end;
+        padding-top: 0.5rem;
+    }
+    
+    .companies-table-action-cell::before {
+        display: none;
+    }
+}

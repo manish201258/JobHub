@@ -1,0 +1,360 @@
+/* Base Styles */
+.admin-home-scrollable {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  /* Hero Section */
+  .admin-hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #121212 0%, #1a1a1a 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .admin-hero-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  
+  .admin-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .admin-hero-highlight {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+  
+  .admin-hero-text {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: #cccccc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .admin-hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(5deg);
+  }
+  
+  /* Register Company Section */
+  .admin-register-section {
+    padding: 5rem 2rem;
+    background-color: #222121;
+    border-top: 1px solid rgba(0, 255, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+  }
+  
+  .admin-register-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+  
+  .admin-register-text {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .admin-register-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(-5deg);
+    border: 2px solid rgba(0, 255, 0, 0.2);
+  }
+  
+  .admin-register-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Create Job Section */
+  .admin-createjob-section {
+    padding: 5rem 2rem;
+    background-color: #121212;
+  }
+  
+  .admin-createjob-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+  
+  .admin-createjob-text {
+    flex: 1;
+    padding: 2rem;
+    text-align: right;
+  }
+  
+  .admin-createjob-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(5deg);
+    border: 2px solid rgba(0, 255, 0, 0.2);
+  }
+  
+  .admin-createjob-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Common Section Styles */
+  .admin-section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .admin-section-icon {
+    color: #00ff00;
+    font-size: 2rem;
+  }
+  
+  .admin-section-description {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .admin-action-btn {
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-action-btn svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-action-btn:hover svg {
+    transform: translateX(5px);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .admin-hero-title {
+      font-size: 2.8rem;
+    }
+    
+    .admin-register-content,
+    .admin-createjob-content {
+      flex-direction: column;
+    }
+    
+    .admin-createjob-text {
+      text-align: center;
+    }
+    
+    .admin-register-image,
+    .admin-createjob-image {
+      transform: none;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .admin-hero-text {
+      font-size: 1.2rem;
+    }
+    
+    .admin-section-title {
+      font-size: 2rem;
+    }
+    
+    .admin-register-section,
+    .admin-createjob-section {
+      padding: 3rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .admin-hero-title {
+      font-size: 1.8rem;
+    }
+    
+    .admin-section-title {
+      font-size: 1.6rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .admin-action-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* Hero Section - Responsive */
+.admin-hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #121212 0%, #1a1a1a 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .admin-hero-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .admin-hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .admin-hero-text {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 3rem;
+    color: #cccccc;
+    max-width: 800px;
+    padding: 0 1rem;
+  }
+  
+  .admin-hero-image-container {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: 2rem;
+  
+  }
+  .admin-hero-image-container:hover{
+    box-shadow:0px  9px 10px rgba(65, 241, 38, 0.945);
+ 
+  }
+  
+  .admin-hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(5deg);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .admin-hero-section {
+      min-height: 90vh;
+      padding: 4rem 1rem;
+    }
+    
+    .admin-hero-image {
+      max-height: 40vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-hero-section {
+      min-height: 80vh;
+    }
+    
+    .admin-hero-image {
+      max-height: 35vh;
+      transform: perspective(800px) rotateX(5deg);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .admin-hero-section {
+      min-height: 70vh;
+      padding: 3rem 1rem;
+    }
+    
+    .admin-hero-image {
+      max-height: 30vh;
+      border-radius: 10px;
+    }
+    
+    .admin-hero-title {
+      margin-bottom: 1rem;
+    }
+    
+    .admin-hero-text {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-height: 700px) {
+    .admin-hero-image {
+      max-height: 40vh;
+    }
+  }
+  
+  @media (max-height: 600px) {
+    .admin-hero-image {
+      max-height: 30vh;
+    }
+    
+    .admin-hero-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
