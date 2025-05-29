@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
 const corsOptions={
-    origin:'https://jobhub-0jq5.onrender.com',
+    origin:'https://jobhub-qw73.onrender.com',
     credentials:true
 }
 
